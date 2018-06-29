@@ -12,6 +12,20 @@ module.exports = {
                 console.log(err)
             } );
     },
+    get_house: (req, res) => {
+        const dbInstance = req.app.get('db');
+        const myId = parseInt(req.params.id);
+  
+        dbInstance.get_house(myId)
+            .then( house => {
+                console.log(house)
+                res.status(200).send( house )
+            })
+            .catch( err => {
+                res.status(500).send({errorMessage: "Oops! Something went wrong. Our engineers have been informed!"});
+                console.log(err)
+            } );
+    },
     create: (req, res) => {
         const dbInstance = req.app.get('db');
         const {name, address, city, state, zipcode} = req.body;

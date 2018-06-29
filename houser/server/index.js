@@ -19,6 +19,7 @@ massive( process.env.CONNECTION_STRING ).then( dbInstance => {
   }).catch( err => console.log(err) );
 
 app.get('/house_list', controller.get_houses);
+app.get('/house/:id', controller.get_house);
 app.post('/house', controller.create);
 
 
