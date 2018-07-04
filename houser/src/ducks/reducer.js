@@ -26,7 +26,7 @@ export default function reducer(state=initialState, action){
     }
 }
 
-
+//This function returns the "action" that will be plugged in to this reducer to trigger the "Gather Location" switch case
 export function gatherLocation(houseName, address, city, state, zipcode){
     return {
         type: GATHER_LOCATION,

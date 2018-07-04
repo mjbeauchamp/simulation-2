@@ -22,10 +22,7 @@ class StepThree extends Component{
         let zipcode = this.state.zipcode;
         axios.post('/house', {name, address, city, state, zipcode})
             .then(data => {
-                console.log(data)
-                this.setState({
-                    redirect: true
-                })
+                this.history.push('/')
             })
             .catch(err => {
                 console.log(err)
